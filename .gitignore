@@ -1,4 +1,36 @@
+
+---
+
+### ✅ `.gitignore` (untuk Xcode & Swift)
+
+```gitignore
 # Xcode
-DerivedData/
 build/
+DerivedData/
 *.xcworkspace
+xcuserdata/
+*.xcuserstate
+
+# SwiftPM
+.swiftpm
+.build
+
+# CocoaPods
+Pods/
+Podfile.lock
+
+# Carthage
+Carthage/Build/
+
+# fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots
+fastlane/test_output
+
+# Others
+.DS_Store
+.env
+*.log
+*.swp
+*.lock
