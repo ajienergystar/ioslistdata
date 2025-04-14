@@ -1,8 +1,15 @@
-//
-//  Claim.swift
-//  ListDataApp
-//
-//  Created by mac on 14/4/25.
-//
+//  Created By Aji Prakosa 2025
 
-import Foundation
+struct Claim: Codable {
+    let claimantId: Int
+    let claimId: Int
+    let title: String
+    let description: String
+    
+    enum CodingKeys: String, CodingKey {
+        case claimantId = "userId"
+        case claimId = "id"
+        case title
+        case description = "body"
+    }
+}
