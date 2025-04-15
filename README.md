@@ -8,6 +8,8 @@ Welcome to **ListDataApp**, an iOS application built entirely with **SwiftUI** u
 - 📱 Responsive design for iPhone and iPad
 - 💡 VIPER design pattern
 - 🔐 Safe, lightweight, and beginner-friendly
+- 📋 Claim List View  
+- 🧾 Claim Detail View  
 
 ## 📸 Screenshots
 - Main Page (ClaimListView)
@@ -25,7 +27,7 @@ Welcome to **ListDataApp**, an iOS application built entirely with **SwiftUI** u
 
 - Swift 5+
 - SwiftUI
-- Xcode (latest version)
+- Xcode (Version 15.2 (15C500b))
 - VIPER Architecture
 
 ## 📦 Installation
