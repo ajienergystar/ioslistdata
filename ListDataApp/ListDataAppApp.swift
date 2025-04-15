@@ -1,9 +1,4 @@
-//
-//  ListDataAppApp.swift
-//  ListDataApp
-//
-//  Created by mac on 14/4/25.
-//
+//  Created By Aji Prakosa 2025
 
 import SwiftUI
 

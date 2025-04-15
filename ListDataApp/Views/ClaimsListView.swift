@@ -1,26 +1,34 @@
+//  Created By Aji Prakosa 2025
+
 import SwiftUI
 
+// MARK: - Main View
 struct ClaimsListView: View, ClaimsListViewProtocol {
     @ObservedObject var presenter: ClaimsListPresenter
+    
+    // State Properties
     @State private var searchText = ""
     @State private var isLoading = false
     @State private var errorMessage: String?
-    
     @State private var selectedClaim: Claim?
     @State private var showDetail = false
+    
+    // Computed Properties
+    private var filteredClaims: [Claim] {
+        guard !searchText.isEmpty else { return presenter.claims }
+        let lowercasedSearch = searchText.lowercased()
+        return presenter.claims.filter {
+            $0.title.lowercased().contains(lowercasedSearch) ||
+            $0.description.lowercased().contains(lowercasedSearch)
+        }
+    }
     
     var body: some View {
         NavigationStack {
             VStack(spacing: 0) {
-                // Custom header
                 headerView
-                
-                // Search bar
                 searchView
-                
                 Spacer()
-                
-                // Main content
                 contentView
             }
             .navigationDestination(for: Claim.self) { claim in
@@ -32,6 +40,15 @@ struct ClaimsListView: View, ClaimsListViewProtocol {
         }
     }
     
+    // MARK: - Protocol Implementation
+    func showLoading() { isLoading = true }
+    func hideLoading() { isLoading = false }
+    func showClaims(_ claims: [Claim]) { presenter.claims = claims }
+    func showError(_ message: String) { errorMessage = message }
+}
+
+// MARK: - View Components
+extension ClaimsListView {
     private var headerView: some View {
         HStack {
             Text("Insurance Claims")
@@ -50,6 +67,7 @@ struct ClaimsListView: View, ClaimsListViewProtocol {
             TextField("Search claims", text: $searchText)
                 .textFieldStyle(.plain)
                 .autocorrectionDisabled()
+            
             if !searchText.isEmpty {
                 Button(action: { searchText = "" }) {
                     Image(systemName: "xmark.circle.fill")
@@ -67,18 +85,26 @@ struct ClaimsListView: View, ClaimsListViewProtocol {
     @ViewBuilder
     private var contentView: some View {
         if presenter.isLoading {
-            ProgressView()
-                .progressViewStyle(CircularProgressViewStyle(tint: .blue))
+            loadingView
         } else if let errorMessage = presenter.errorMessage {
             ErrorView(message: errorMessage)
-                .frame(maxWidth: .infinity, maxHeight: .infinity)
         } else {
-            ScrollView {
-                LazyVStack(spacing: 0) {
-                    ForEach(filteredClaims, id: \.claimId) { claim in
-                        claimRow(for: claim)
-                        Divider()
-                    }
+            claimsListView
+        }
+    }
+    
+    private var loadingView: some View {
+        ProgressView()
+            .progressViewStyle(CircularProgressViewStyle(tint: .blue))
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+    }
+    
+    private var claimsListView: some View {
+        ScrollView {
+            LazyVStack(spacing: 0) {
+                ForEach(filteredClaims) { claim in
+                    claimRow(for: claim)
+                    Divider()
                 }
             }
         }
@@ -86,7 +112,11 @@ struct ClaimsListView: View, ClaimsListViewProtocol {
     
     private func claimRow(for claim: Claim) -> some View {
         NavigationLink(value: claim) {
-            CardView(cornerRadius: 12, shadowOpacity: 0.15, color: .gray) {
+            CardView(
+                cornerRadius: 12,
+                shadowOpacity: 0.15,
+                color: .gray
+            ) {
                 VStack(alignment: .leading, spacing: 4) {
                     Text(claim.title.capitalized)
                         .font(.headline)
@@ -114,32 +144,9 @@ struct ClaimsListView: View, ClaimsListViewProtocol {
         }
         .buttonStyle(PlainButtonStyle())
     }
-    
-    private var filteredClaims: [Claim] {
-        guard !searchText.isEmpty else { return presenter.claims }
-        let lowercasedSearch = searchText.lowercased()
-        return presenter.claims.filter {
-            $0.title.lowercased().contains(lowercasedSearch) ||
-            $0.description.lowercased().contains(lowercasedSearch)
-        }
-    }
-    
-    // MARK: - ClaimsListViewProtocol
-    func showLoading() { isLoading = true }
-    func hideLoading() { isLoading = false }
-    func showClaims(_ claims: [Claim]) { presenter.claims = claims }
-    func showError(_ message: String) { errorMessage = message }
 }
 
-// MARK: - Configurator for ClaimDetailView
-struct ClaimDetailConfigurator {
-    static func configure(with claim: Claim) -> some View {
-        let interactor = ClaimDetailInteractor(claim: claim)
-        let presenter = ClaimDetailPresenter(interactor: interactor)
-        return ClaimDetailView(presenter: presenter)
-    }
-}
-
+// MARK: - Supporting Views
 struct ErrorView: View {
     let message: String
     
@@ -152,10 +159,20 @@ struct ErrorView: View {
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 24)
         }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
     }
 }
 
+// MARK: - Configurator
+struct ClaimDetailConfigurator {
+    static func configure(with claim: Claim) -> some View {
+        let interactor = ClaimDetailInteractor(claim: claim)
+        let presenter = ClaimDetailPresenter(interactor: interactor)
+        return ClaimDetailView(presenter: presenter)
+    }
+}
 
+// MARK: - Claim Extensions
 extension Claim: Identifiable {
     public var id: Int { claimId }
 }
