@@ -4,7 +4,7 @@ import Foundation
 
 class ClaimsListPresenter: ClaimsListPresenterProtocol {
     private let interactor: ClaimsListInteractorInputProtocol
-    let router: ClaimsListRouterProtocol
+    private let router: ClaimsListRouterProtocol
     
     @Published var isLoading: Bool = false
     @Published var claims: [Claim] = []
@@ -21,8 +21,10 @@ class ClaimsListPresenter: ClaimsListPresenterProtocol {
             isLoading = true
             do {
                 claims = try await interactor.fetchClaims()
+                errorMessage = nil
             } catch {
                 errorMessage = error.localizedDescription
+                claims = []
             }
             isLoading = false
         }

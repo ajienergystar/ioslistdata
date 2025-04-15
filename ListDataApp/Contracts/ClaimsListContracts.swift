@@ -11,10 +11,15 @@ protocol ClaimsListViewProtocol {
 }
 
 protocol ClaimsListPresenterProtocol: ObservableObject {
+    var isLoading: Bool { get }
+    var claims: [Claim] { get }
+    var errorMessage: String? { get }
+    
     func onAppear()
-    func didSelectClaim(_ claim: Claim)
     func searchClaims(with query: String)
+    func didSelectClaim(_ claim: Claim)
 }
+
 
 protocol ClaimsListInteractorInputProtocol {
     func fetchClaims() async throws -> [Claim]

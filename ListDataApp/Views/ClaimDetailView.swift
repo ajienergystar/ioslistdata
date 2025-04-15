@@ -9,7 +9,7 @@ struct ClaimDetailView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
-                Text("Title: \(presenter.claim.title)")
+                Text(presenter.claim.title.capitalized)
                     .font(.title)
                     .bold()
                 

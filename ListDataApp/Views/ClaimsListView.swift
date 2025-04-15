@@ -86,27 +86,31 @@ struct ClaimsListView: View, ClaimsListViewProtocol {
     
     private func claimRow(for claim: Claim) -> some View {
         NavigationLink(value: claim) {
-            VStack(alignment: .leading, spacing: 4) {
-                Text(claim.title)
-                    .font(.headline)
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                
-                Text(claim.description)
-                    .font(.subheadline)
-                    .lineLimit(2)
-                    .foregroundColor(.secondary)
-                
-                HStack {
-                    Text("Claim ID: \(claim.claimId)")
-                    Text("•")
-                    Text("Claimant ID: \(claim.claimantId)")
+            CardView(cornerRadius: 12, shadowOpacity: 0.15, color: .gray) {
+                VStack(alignment: .leading, spacing: 4) {
+                    Text(claim.title.capitalized)
+                        .font(.headline)
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                    
+                    Text(claim.description)
+                        .font(.subheadline)
+                        .lineLimit(2)
+                        .foregroundColor(.white)
+                    
+                    HStack {
+                        Text("Claim ID: \(claim.claimId)")
+                        Text("•")
+                        Text("Claimant ID: \(claim.claimantId)")
+                    }
+                    .font(.caption)
+                    .foregroundColor(.white)
                 }
-                .font(.caption)
-                .foregroundColor(.gray)
+                .padding(.vertical, 12)
+                .padding(.horizontal, 16)
+                .contentShape(Rectangle())
             }
-            .padding(.vertical, 12)
             .padding(.horizontal, 16)
-            .contentShape(Rectangle())
+            .padding(.bottom, 16)
         }
         .buttonStyle(PlainButtonStyle())
     }
@@ -153,7 +157,6 @@ struct ErrorView: View {
 
 
 extension Claim: Identifiable {
-    // Assuming Claim has a unique identifier property like 'id' or 'claimId'
     public var id: Int { claimId }
 }
 
