@@ -3,14 +3,14 @@
 import Foundation
 import SwiftUI
 
-protocol ClaimsListViewProtocol: AnyObject {
+protocol ClaimsListViewProtocol {
     func showLoading()
     func hideLoading()
     func showClaims(_ claims: [Claim])
     func showError(_ message: String)
 }
 
-protocol ClaimsListPresenterProtocol {
+protocol ClaimsListPresenterProtocol: ObservableObject {
     func onAppear()
     func didSelectClaim(_ claim: Claim)
     func searchClaims(with query: String)

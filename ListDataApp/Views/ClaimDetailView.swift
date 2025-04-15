@@ -3,18 +3,18 @@
 import Foundation
 import SwiftUI
 
-struct ClaimDetailView: View, ClaimDetailViewProtocol {
+struct ClaimDetailView: View {
     @ObservedObject var presenter: ClaimDetailPresenter
     
     var body: some View {
         ScrollView {
             VStack(alignment: .leading, spacing: 16) {
-                Text(presenter.claim.title)
+                Text("Title: \(presenter.claim.title)")
                     .font(.title)
                     .bold()
                 
                 VStack(alignment: .leading, spacing: 4) {
-                    Text("Claim ID: \(presenter.claim.id)")
+                    Text("Claim ID: \(presenter.claim.claimId)")
                     Text("Claimant ID: \(presenter.claim.claimantId)")
                 }
                 .font(.subheadline)
@@ -31,11 +31,5 @@ struct ClaimDetailView: View, ClaimDetailViewProtocol {
         }
         .navigationTitle("Claim Details")
         .navigationBarTitleDisplayMode(.inline)
-    }
-    
-    // MARK: - ClaimDetailViewProtocol
-    
-    func showClaimDetails(_ claim: Claim) {
-        // Handled by presenter in this case
     }
 }

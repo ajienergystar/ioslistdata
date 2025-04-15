@@ -11,7 +11,7 @@ import SwiftUI
 struct ListDataAppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            ClaimsListRouter.createModule()
         }
     }
 }

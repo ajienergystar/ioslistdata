@@ -3,11 +3,11 @@
 import Foundation
 import SwiftUI
 
-protocol ClaimDetailViewProtocol: AnyObject {
+protocol ClaimDetailViewProtocol {
     func showClaimDetails(_ claim: Claim)
 }
 
-protocol ClaimDetailPresenterProtocol {
+protocol ClaimDetailPresenterProtocol: ObservableObject {
     var claim: Claim { get }
 }
 

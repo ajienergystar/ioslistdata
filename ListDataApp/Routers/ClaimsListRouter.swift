@@ -15,7 +15,6 @@ class ClaimsListRouter: ClaimsListRouterProtocol {
         let router = ClaimsListRouter()
         let presenter = ClaimsListPresenter(interactor: interactor, router: router)
         let view = ClaimsListView(presenter: presenter)
-        presenter.view = view
         return view
     }
 }

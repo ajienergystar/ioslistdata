@@ -2,14 +2,10 @@
 
 import Foundation
 
-class ClaimDetailPresenter: ClaimDetailPresenterProtocol {
-    let interactor: ClaimDetailInteractorInputProtocol
-    
-    var claim: Claim {
-        interactor.claim
-    }
+class ClaimDetailPresenter: ObservableObject {
+    @Published var claim: Claim
     
     init(interactor: ClaimDetailInteractorInputProtocol) {
-        self.interactor = interactor
+        self.claim = interactor.claim
     }
 }

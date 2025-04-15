@@ -3,11 +3,12 @@
 import Foundation
 
 class ClaimsListPresenter: ClaimsListPresenterProtocol {
-    weak var view: ClaimsListViewProtocol?
-    let interactor: ClaimsListInteractorInputProtocol
+    private let interactor: ClaimsListInteractorInputProtocol
     let router: ClaimsListRouterProtocol
     
-    private var allClaims: [Claim] = []
+    @Published var isLoading: Bool = false
+    @Published var claims: [Claim] = []
+    @Published var errorMessage: String?
     
     init(interactor: ClaimsListInteractorInputProtocol,
          router: ClaimsListRouterProtocol) {
@@ -17,31 +18,21 @@ class ClaimsListPresenter: ClaimsListPresenterProtocol {
     
     func onAppear() {
         Task { @MainActor in
-            view?.showLoading()
+            isLoading = true
             do {
-                let claims = try await interactor.fetchClaims()
-                allClaims = claims
-                view?.showClaims(claims)
+                claims = try await interactor.fetchClaims()
             } catch {
-                view?.showError(error.localizedDescription)
+                errorMessage = error.localizedDescription
             }
-            view?.hideLoading()
+            isLoading = false
         }
-    }
-    
-    func didSelectClaim(_ claim: Claim) {
-        // Navigation handled by SwiftUI in this case
     }
     
     func searchClaims(with query: String) {
-        if query.isEmpty {
-            view?.showClaims(allClaims)
-        } else {
-            let filtered = allClaims.filter {
-                $0.title.localizedCaseInsensitiveContains(query) ||
-                $0.description.localizedCaseInsensitiveContains(query)
-            }
-            view?.showClaims(filtered)
-        }
+        // Search logic now handled in the view
+    }
+    
+    func didSelectClaim(_ claim: Claim) {
+        // Navigation handled by router
     }
 }

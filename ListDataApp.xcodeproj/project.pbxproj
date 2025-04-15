@@ -19,6 +19,17 @@
 		045A13902DAD168400FA4A56 /* ClaimService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045A138F2DAD168400FA4A56 /* ClaimService.swift */; };
 		045A13922DAD16C200FA4A56 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 045A13912DAD16C200FA4A56 /* Alamofire */; };
 		045A13942DAD16C200FA4A56 /* AlamofireDynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 045A13932DAD16C200FA4A56 /* AlamofireDynamic */; };
+		045A13972DAD1B5000FA4A56 /* ClaimsListContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045A13962DAD1B5000FA4A56 /* ClaimsListContracts.swift */; };
+		045A139A2DAD1C7B00FA4A56 /* ClaimsListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045A13992DAD1C7B00FA4A56 /* ClaimsListInteractor.swift */; };
+		045A139D2DAD367B00FA4A56 /* ClaimsListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045A139C2DAD367B00FA4A56 /* ClaimsListPresenter.swift */; };
+		045A13A02DAD377000FA4A56 /* ClaimsListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045A139F2DAD377000FA4A56 /* ClaimsListRouter.swift */; };
+		045A13A32DAD3B2500FA4A56 /* ClaimsListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045A13A22DAD3B2500FA4A56 /* ClaimsListView.swift */; };
+		045A13A52DAD3C0B00FA4A56 /* ClaimDetailContracts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045A13A42DAD3C0B00FA4A56 /* ClaimDetailContracts.swift */; };
+		045A13A72DAD3D9300FA4A56 /* ClaimDetailInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045A13A62DAD3D9300FA4A56 /* ClaimDetailInteractor.swift */; };
+		045A13A92DAD3E3200FA4A56 /* ClaimDetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045A13A82DAD3E3200FA4A56 /* ClaimDetailPresenter.swift */; };
+		045A13AB2DAD404100FA4A56 /* ClaimDetailRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045A13AA2DAD404100FA4A56 /* ClaimDetailRouter.swift */; };
+		045A13AD2DAD40C600FA4A56 /* ClaimDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045A13AC2DAD40C600FA4A56 /* ClaimDetailView.swift */; };
+		045A13B02DAD418700FA4A56 /* View+Alerts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 045A13AF2DAD418700FA4A56 /* View+Alerts.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +63,17 @@
 		045A138A2DAD132C00FA4A56 /* Claim.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Claim.swift; sourceTree = "<group>"; };
 		045A138D2DAD156500FA4A56 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
 		045A138F2DAD168400FA4A56 /* ClaimService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaimService.swift; sourceTree = "<group>"; };
+		045A13962DAD1B5000FA4A56 /* ClaimsListContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaimsListContracts.swift; sourceTree = "<group>"; };
+		045A13992DAD1C7B00FA4A56 /* ClaimsListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaimsListInteractor.swift; sourceTree = "<group>"; };
+		045A139C2DAD367B00FA4A56 /* ClaimsListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaimsListPresenter.swift; sourceTree = "<group>"; };
+		045A139F2DAD377000FA4A56 /* ClaimsListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaimsListRouter.swift; sourceTree = "<group>"; };
+		045A13A22DAD3B2500FA4A56 /* ClaimsListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaimsListView.swift; sourceTree = "<group>"; };
+		045A13A42DAD3C0B00FA4A56 /* ClaimDetailContracts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaimDetailContracts.swift; sourceTree = "<group>"; };
+		045A13A62DAD3D9300FA4A56 /* ClaimDetailInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaimDetailInteractor.swift; sourceTree = "<group>"; };
+		045A13A82DAD3E3200FA4A56 /* ClaimDetailPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaimDetailPresenter.swift; sourceTree = "<group>"; };
+		045A13AA2DAD404100FA4A56 /* ClaimDetailRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaimDetailRouter.swift; sourceTree = "<group>"; };
+		045A13AC2DAD40C600FA4A56 /* ClaimDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClaimDetailView.swift; sourceTree = "<group>"; };
+		045A13AF2DAD418700FA4A56 /* View+Alerts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Alerts.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,6 +126,12 @@
 		045A135D2DAD03C600FA4A56 /* ListDataApp */ = {
 			isa = PBXGroup;
 			children = (
+				045A13AE2DAD414A00FA4A56 /* Utilities */,
+				045A13A12DAD3B0200FA4A56 /* Views */,
+				045A139E2DAD374E00FA4A56 /* Routers */,
+				045A139B2DAD362C00FA4A56 /* Presenters */,
+				045A13982DAD1C5500FA4A56 /* Interactors */,
+				045A13952DAD1B1C00FA4A56 /* Contracts */,
 				045A138C2DAD153800FA4A56 /* Services */,
 				045A13892DAD12FE00FA4A56 /* Models */,
 				045A135E2DAD03C600FA4A56 /* ListDataAppApp.swift */,
@@ -154,6 +182,59 @@
 				045A138F2DAD168400FA4A56 /* ClaimService.swift */,
 			);
 			path = Services;
+			sourceTree = "<group>";
+		};
+		045A13952DAD1B1C00FA4A56 /* Contracts */ = {
+			isa = PBXGroup;
+			children = (
+				045A13962DAD1B5000FA4A56 /* ClaimsListContracts.swift */,
+				045A13A42DAD3C0B00FA4A56 /* ClaimDetailContracts.swift */,
+			);
+			path = Contracts;
+			sourceTree = "<group>";
+		};
+		045A13982DAD1C5500FA4A56 /* Interactors */ = {
+			isa = PBXGroup;
+			children = (
+				045A13992DAD1C7B00FA4A56 /* ClaimsListInteractor.swift */,
+				045A13A62DAD3D9300FA4A56 /* ClaimDetailInteractor.swift */,
+			);
+			path = Interactors;
+			sourceTree = "<group>";
+		};
+		045A139B2DAD362C00FA4A56 /* Presenters */ = {
+			isa = PBXGroup;
+			children = (
+				045A139C2DAD367B00FA4A56 /* ClaimsListPresenter.swift */,
+				045A13A82DAD3E3200FA4A56 /* ClaimDetailPresenter.swift */,
+			);
+			path = Presenters;
+			sourceTree = "<group>";
+		};
+		045A139E2DAD374E00FA4A56 /* Routers */ = {
+			isa = PBXGroup;
+			children = (
+				045A139F2DAD377000FA4A56 /* ClaimsListRouter.swift */,
+				045A13AA2DAD404100FA4A56 /* ClaimDetailRouter.swift */,
+			);
+			path = Routers;
+			sourceTree = "<group>";
+		};
+		045A13A12DAD3B0200FA4A56 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				045A13A22DAD3B2500FA4A56 /* ClaimsListView.swift */,
+				045A13AC2DAD40C600FA4A56 /* ClaimDetailView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		045A13AE2DAD414A00FA4A56 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				045A13AF2DAD418700FA4A56 /* View+Alerts.swift */,
+			);
+			path = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -293,10 +374,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				045A139A2DAD1C7B00FA4A56 /* ClaimsListInteractor.swift in Sources */,
+				045A13A32DAD3B2500FA4A56 /* ClaimsListView.swift in Sources */,
+				045A139D2DAD367B00FA4A56 /* ClaimsListPresenter.swift in Sources */,
 				045A13612DAD03C600FA4A56 /* ContentView.swift in Sources */,
 				045A138E2DAD156500FA4A56 /* NetworkError.swift in Sources */,
+				045A13A92DAD3E3200FA4A56 /* ClaimDetailPresenter.swift in Sources */,
+				045A13972DAD1B5000FA4A56 /* ClaimsListContracts.swift in Sources */,
+				045A13A02DAD377000FA4A56 /* ClaimsListRouter.swift in Sources */,
 				045A138B2DAD132C00FA4A56 /* Claim.swift in Sources */,
 				045A13902DAD168400FA4A56 /* ClaimService.swift in Sources */,
+				045A13A52DAD3C0B00FA4A56 /* ClaimDetailContracts.swift in Sources */,
+				045A13A72DAD3D9300FA4A56 /* ClaimDetailInteractor.swift in Sources */,
+				045A13AD2DAD40C600FA4A56 /* ClaimDetailView.swift in Sources */,
+				045A13B02DAD418700FA4A56 /* View+Alerts.swift in Sources */,
+				045A13AB2DAD404100FA4A56 /* ClaimDetailRouter.swift in Sources */,
 				045A135F2DAD03C600FA4A56 /* ListDataAppApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -468,7 +560,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -497,7 +589,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
-				IPHONEOS_DEPLOYMENT_TARGET = 16.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
