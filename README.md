@@ -6,7 +6,7 @@ Welcome to **ListDataApp**, an iOS application built entirely with **SwiftUI** u
 
 - 🌟 Clean architecture using SwiftUI
 - 📱 Responsive design for iPhone and iPad
-- 💡 MVVM design pattern
+- 💡 VIPER design pattern
 - 🔐 Safe, lightweight, and beginner-friendly
 
 ## 📸 Screenshots
@@ -26,7 +26,7 @@ Welcome to **ListDataApp**, an iOS application built entirely with **SwiftUI** u
 - Swift 5+
 - SwiftUI
 - Xcode (latest version)
-- MVVM Architecture
+- VIPER Architecture
 
 ## 📦 Installation
 
